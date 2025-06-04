@@ -1,0 +1,53 @@
+#Def usado para definir uma função!!
+def obter_nome():
+    while True:
+        nome = input("Digite seu nome: ").strip()
+        if nome.replace(" ", "").isalpha():  # permite nomes com espaços, tipo "João da Silva"
+            return nome
+        else:
+            print("Nome inválido! Use apenas letras e espaços.")
+
+def obter_idade():
+    while True:
+        idade = input("Digite sua idade: ").strip()
+        if idade.isdigit():#permite apenas números
+            return int(idade)
+        else:
+            print("Idade inválida! Use apenas números.")
+
+
+def obter_numero_de_telefone():
+    while True:
+        telefone = input("Digite seu número de telefone: ").strip()
+        if telefone.isdigit() and len(telefone) == 11:  # Exemplo: 11 dígitos
+            return telefone
+        else:
+            print("Número de telefone inválido! Use apenas números e certifique-se de ter 11 dígitos.")
+
+def obter_senha():
+    while True:
+        senha = input("Digite sua senha: ").strip()
+        if len(senha) >= 6:  # Exemplo: senha deve ter pelo menos 6 caracteres
+            return senha
+        else:
+            print("Senha inválida! Deve ter pelo menos 6 caracteres.")
+    
+def main():#Ela é como o "ponto de partida",
+    #tudo que você quer que aconteça quando o programa começar, você coloca dentro dela.
+    nome = obter_nome()
+    idade = obter_idade()
+    telefone = obter_numero_de_telefone()
+    senha = obter_senha()
+
+    print(f"\nSalve, {nome}! Você tem {idade} anos.")
+    print(f"\ntelefone:{telefone}." )
+    print("A sua senha foi obtida corretamente!")
+
+
+    if idade >= 18:
+        print("Você é maior de idade.")
+    else:
+        print("Você é menor de idade.")
+
+if __name__ == "__main__":
+    main()
